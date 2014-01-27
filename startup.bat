@@ -1,16 +1,15 @@
 @echo off
-goto :START
 
-This is a logon script for my personal computers
+::This is a logon script for my personal computers.
 
-:START
-:: -------------------------
-:: Set Environment Variables
-:: -------------------------
+:: -----------------------------
+:: --Set Environment Variables--
+:: -----------------------------
 setx path %PATH%;C:\Python32
-:: -------------
-:: Set Hostnames
-:: -------------
+setx path %PATH%;C:\Ruby193
+:: -----------------
+:: --Set Hostnames--
+:: -----------------
 SET NEWLINE=^& echo.
 FIND /C /I "QNSRV01" %WINDIR%\system32\drivers\etc\hosts
 IF %ERRORLEVEL% NEQ 0 ECHO %NEWLINE%^10.1.1.10 QNSRV01>>%WINDIR%\system32\drivers\etc\hosts
@@ -20,9 +19,9 @@ FIND /C /I "COG16" %WINDIR%\system32\drivers\etc\hosts
 IF %ERRORLEVEL% NEQ 0 ECHO %NEWLINE%^10.1.1.2 COG16>>%WINDIR%\system32\drivers\etc\hosts
 FIND /C /I "QNPC02" %WINDIR%\system32\drivers\etc\hosts
 IF %ERRORLEVEL% NEQ 0 ECHO %NEWLINE%^10.1.1.9 QNPC02>>%WINDIR%\system32\drivers\etc\hosts
-:: ----------------------
-:: Connect Network Drives
-:: ----------------------
+:: --------------------------
+:: --Connect Network Drives--
+:: --------------------------
 NET USE M: /DELETE /Y
 NET USE M: \\QNSRV01\Movies /PERSISTENT:No
 NET USE N: /DELETE /Y
@@ -39,4 +38,3 @@ NET USE S: /DELETE /Y
 NET USE S: \\QNSRV01\Photos /PERSISTENT:No
 NET USE T: /DELETE /Y
 NET USE T: "\\QNSRV01\TV Shows" /PERSISTENT:No
-
