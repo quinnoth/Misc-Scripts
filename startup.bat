@@ -5,12 +5,17 @@
 :: -----------------------------
 :: --Set Environment Variables--
 :: -----------------------------
-setx path %PATH%;C:\Python32
-setx path %PATH%;C:\Ruby193
+PATH > .\path.txt
+FIND /C /I "C:\Python32" .\path.txt
+IF %ERRORLEVEL% NEQ 0 set path %PATH%;C:\Python32
+FIND /C /I "C:\Ruby193" .\path.txt
+IF %ERRORLEVEL% NEQ 0 set path %PATH%;C:\Ruby193
+DEL /F /Q .\path.txt
 :: -----------------
 :: --Set Hostnames--
 :: -----------------
 SET NEWLINE=^& echo.
+
 FIND /C /I "QNSRV01" %WINDIR%\system32\drivers\etc\hosts
 IF %ERRORLEVEL% NEQ 0 ECHO %NEWLINE%^10.1.1.10 QNSRV01>>%WINDIR%\system32\drivers\etc\hosts
 FIND /C /I "QNPC01" %WINDIR%\system32\drivers\etc\hosts
@@ -37,4 +42,4 @@ NET USE R: \\QNSRV01\Music /PERSISTENT:No
 NET USE S: /DELETE /Y
 NET USE S: \\QNSRV01\Photos /PERSISTENT:No
 NET USE T: /DELETE /Y
-NET USE T: "\\QNSRV01\TV Shows" /PERSISTENT:No
+NET USE T: \\QNSRV01\TV /PERSISTENT:No
