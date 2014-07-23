@@ -1,0 +1,1 @@
+wbadmin start backup -backupTarget:\\<share>\Images\ -include:C: -allCritical -quiet
