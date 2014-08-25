@@ -1,4 +1,4 @@
-# ----------------------------
+﻿# ----------------------------
 # --Install Chocolatey First--
 # ----------------------------
 iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
@@ -11,6 +11,7 @@ choco install adobereader
 choco install autohotkey
 choco install ccleaner
 choco install dropbox
+choco install conemu
 choco install f.lux
 choco install git
 choco install github
@@ -22,8 +23,10 @@ choco install keepass
 choco install notepadplusplus
 choco install paint.net
 choco install putty
+choco install python
+choco install pip
 choco install qbittorrent
-choco install sublimetext2
+choco install sublimetext3
 choco install sysinternals
 choco install truecrypt
 choco install vim
