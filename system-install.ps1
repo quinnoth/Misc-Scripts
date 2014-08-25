@@ -1,4 +1,4 @@
-﻿# ----------------------------
+# ----------------------------
 # --Install Chocolatey First--
 # ----------------------------
 iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
@@ -31,6 +31,10 @@ choco install sysinternals
 choco install truecrypt
 choco install vim
 choco install winscp
+# --------------------
+# --Some Other Stuff--
+# --------------------
+pip install virtualenv
 # -------------------------------
 # --Install the Hyper-V Feature--
 # -------------------------------
