@@ -38,7 +38,7 @@ Rename-Item C:\tools Tools # OCD
 # -------------------------------
 # --Install the Hyper-V Feature--
 # -------------------------------
-Get-WindowsOptionalFeature -Online -FeatureName *hyper-v*all  | Enable-WindowsOptionalFeature "Online"
+Get-WindowsOptionalFeature -Online -FeatureName *hyper-v*all  | Enable-WindowsOptionalFeature -Online
 # ---------------------------
 # --Post-Installation Tasks--
 # ---------------------------
